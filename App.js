@@ -1,9 +1,11 @@
-const heading = React.createElement("h1",{id:"samarth"},"Hello world")
+import React from "react";
+import { createRoot } from "react-dom/client";
 
-console.log(heading)
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
+const heading = React.createElement("h1",{id:"heading"},"Hello world");
 
-console.log(root)
 
-root.render(heading)
+const root = createRoot(document.getElementById("root"));
+
+
+root.render(heading);

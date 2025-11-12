@@ -1,0 +1,15 @@
+{
+  "name": "practiceagain",
+  "version": "1.0.0",
+  "description": "<!-- Nameste React is going on -->",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.16.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
