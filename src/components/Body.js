@@ -1,16 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RastaurantCard } from "../utils/constants";
 import RestaurantCard from "./Restaurant";
 import RastaurantCard from "../utils/constants";
+import Shimmer from "./Shimmer";
+import { Link } from "react-router";
 
 const Body = () => {
   const { restaurants } =
     RastaurantCard?.card?.card?.gridElements?.infoWithStyle;
 
-  const [topRatedRestaurat, setTopRatedRestaurent] = useState(restaurants);
+  const [topRatedRestaurat, setTopRatedRestaurent] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [myRestaurant , setMyRestaurant] = useState([])
+
+  useEffect(() => {
+    getDetails();
+  }, []);
+
+  const getDetails = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+
+    const json = await data.json();
 
 
-  console.log(restaurants)
+    const { restaurants } =
+      json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle;
+
+    setTopRatedRestaurent(restaurants);
+    setMyRestaurant(restaurants)
+  };
 
   const handleFilter = () => {
     const topFilter = topRatedRestaurat.filter((item) => {
@@ -20,14 +40,37 @@ const Body = () => {
     setTopRatedRestaurent(topFilter);
   };
 
+  if (topRatedRestaurat?.length === 0) {
+    return <Shimmer />;
+  }
+
+  const handleSearchFilter = () => {
+    const data = myRestaurant.filter((item) => {
+
+      return item.info.name.toLowerCase().includes(searchText.toLowerCase());
+    });
+
+    setTopRatedRestaurent(data);
+  };
+
   return (
-<>
+    <>
+      <button onClick={handleFilter}>Top Retad Restaurent</button>
 
-<button onClick={handleFilter}>Top Retad Restaurent</button>
+      <div>
+        <input
+          type="text"
+          placeholder="search"
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+        />{" "}
+        <button onClick={() => handleSearchFilter()}>search</button>
+      </div>
 
-
-    <div className="res-container">
-      {/* {[
+      <div className="res-container">
+        {/* {[
       <RestaurantCard
         key="1"
         name="Meghana Foods"
@@ -44,10 +87,7 @@ const Body = () => {
       />,
     ]} */}
 
-    
-
-      {topRatedRestaurat?.map(
-        (resData) => {
+        {topRatedRestaurat?.map((resData) => {
           const {
             name,
             avgRating,
@@ -59,8 +99,8 @@ const Body = () => {
           } = resData?.info;
 
           return (
-            <RestaurantCard
-              key={id}
+        <Link  key={id} to={{pathname:`${"restaurantMenu/"+id}`}}>    <RestaurantCard
+             
               name={name}
               avgRating={avgRating}
               cuisines={cuisines}
@@ -68,10 +108,10 @@ const Body = () => {
               cloudinaryImageId={cloudinaryImageId}
               locality={locality}
             />
+            </Link>
           );
-        }
-      )}
-    </div>
+        })}
+      </div>
     </>
   );
 };

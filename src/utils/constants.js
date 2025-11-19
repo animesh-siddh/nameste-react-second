@@ -691,3 +691,229 @@ export const RastaurantCard = {
   export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 
   export default RastaurantCard
+
+
+  export const ResMenu = [
+    {
+        "card": {
+            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+            "info": {
+                "id": "107821025",
+                "name": "Sadha Paratha",
+                "category": "Breads",
+                "description": "A flavorful and savory bread that will leave you craving for more.",
+                "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/10/2/a911f8d1-4f84-4879-84f6-2b8a03b2e73a_ef16095f-2a80-4677-bb6c-5d66b527de06.JPG",
+                "inStock": 1,
+                "isVeg": 1,
+                "price": 2500,
+                "variants": {},
+                "variantsV2": {},
+                "itemAttribute": {
+                    "vegClassifier": "VEG"
+                },
+                "ribbon": {},
+                "type": "ITEM",
+                "itemBadge": {},
+                "badgesV2": {},
+                "ratings": {
+                    "aggregatedRating": {
+                        "rating": "4.5",
+                        "ratingCount": "12 ratings",
+                        "ratingCountV2": "12"
+                    },
+                    "ratingsPresentationConfig": {
+                        "bgGradient": {
+                            "colours": [
+                                "#C8F9E5",
+                                "#00FFFFFF"
+                            ],
+                            "gradientDirection": "GRADIENT_DIRECTION_LEFT_TO_RIGHT"
+                        },
+                        "ratingIconColor": "rating_very_good",
+                        "ratingTextColor": "rating_very_good",
+                        "ratingCountTextColor": "rating_very_good",
+                        "ratingFontName": "FONT_NAME_V2_OVERLINE_NEUTRAL_BOLD",
+                        "ratingCountFontName": "FONT_NAME_V2_OVERLINE_NEUTRAL_BOLD"
+                    }
+                },
+                "parentId": "61841871"
+            },
+            "analytics": {},
+            "hideRestaurantDetails": true
+        }
+    },
+    {
+        "card": {
+            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+            "info": {
+                "id": "107821034",
+                "name": "1 Paneer Paratha",
+                "category": "Breads",
+                "description": "A delectable and savory bread stuffed with a delightful filling, perfect for veggie lovers.",
+                "imageId": "oz6gz06xbs4e6r2ifxjz",
+                "inStock": 1,
+                "isVeg": 1,
+                "price": 6900,
+                "variants": {},
+                "variantsV2": {},
+                "itemAttribute": {
+                    "vegClassifier": "VEG"
+                },
+                "ribbon": {},
+                "type": "ITEM",
+                "itemBadge": {},
+                "badgesV2": {},
+                "ratings": {
+                    "aggregatedRating": {}
+                },
+                "parentId": "61841814"
+            },
+            "analytics": {},
+            "hideRestaurantDetails": true
+        }
+    },
+    {
+        "card": {
+            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+            "info": {
+                "id": "107821021",
+                "name": "1 Poori",
+                "category": "Breads",
+                "description": "A delightful and flavorful Indian bread that will leave your taste buds craving for more.",
+                "imageId": "FOOD_CATALOG/IMAGES/CMS/2025/7/24/34c3af1a-c4d9-48ab-a9c1-2d34e67533b6_cdcefc0f-1df6-4f73-bdc7-f1d501ea418e.jpg_compressed",
+                "inStock": 1,
+                "isVeg": 1,
+                "price": 1000,
+                "variants": {},
+                "variantsV2": {},
+                "itemAttribute": {
+                    "vegClassifier": "VEG"
+                },
+                "ribbon": {},
+                "type": "ITEM",
+                "itemBadge": {},
+                "badgesV2": {},
+                "ratings": {
+                    "aggregatedRating": {
+                        "rating": "4.0",
+                        "ratingCount": "6 ratings",
+                        "ratingCountV2": "6"
+                    },
+                    "ratingsPresentationConfig": {
+                        "bgGradient": {
+                            "colours": [
+                                "#C8F9E5",
+                                "#00FFFFFF"
+                            ],
+                            "gradientDirection": "GRADIENT_DIRECTION_LEFT_TO_RIGHT"
+                        },
+                        "ratingIconColor": "rating_very_good",
+                        "ratingTextColor": "rating_very_good",
+                        "ratingCountTextColor": "rating_very_good",
+                        "ratingFontName": "FONT_NAME_V2_OVERLINE_NEUTRAL_BOLD",
+                        "ratingCountFontName": "FONT_NAME_V2_OVERLINE_NEUTRAL_BOLD"
+                    }
+                },
+                "parentId": "61841815"
+            },
+            "analytics": {},
+            "hideRestaurantDetails": true
+        }
+    },
+    {
+        "card": {
+            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+            "info": {
+                "id": "107821031",
+                "name": "Gobi Paratha",
+                "category": "Breads",
+                "description": "Soft and fluffy flatbread with a mashed caulifloret stuffing.",
+                "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/10/2/0194680b-3902-4cd1-b12d-e26bdf876f57_f33c8563-6a82-41c1-84b1-0580111a1b20.JPG",
+                "inStock": 1,
+                "isVeg": 1,
+                "price": 4000,
+                "variants": {},
+                "variantsV2": {},
+                "itemAttribute": {
+                    "vegClassifier": "VEG"
+                },
+                "ribbon": {},
+                "type": "ITEM",
+                "itemBadge": {},
+                "badgesV2": {},
+                "ratings": {
+                    "aggregatedRating": {
+                        "rating": "4.1",
+                        "ratingCount": "9 ratings",
+                        "ratingCountV2": "9"
+                    },
+                    "ratingsPresentationConfig": {
+                        "bgGradient": {
+                            "colours": [
+                                "#C8F9E5",
+                                "#00FFFFFF"
+                            ],
+                            "gradientDirection": "GRADIENT_DIRECTION_LEFT_TO_RIGHT"
+                        },
+                        "ratingIconColor": "rating_very_good",
+                        "ratingTextColor": "rating_very_good",
+                        "ratingCountTextColor": "rating_very_good",
+                        "ratingFontName": "FONT_NAME_V2_OVERLINE_NEUTRAL_BOLD",
+                        "ratingCountFontName": "FONT_NAME_V2_OVERLINE_NEUTRAL_BOLD"
+                    }
+                },
+                "parentId": "61841848"
+            },
+            "analytics": {},
+            "hideRestaurantDetails": true
+        }
+    },
+    {
+        "card": {
+            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+            "info": {
+                "id": "107821032",
+                "name": "Pyaz Paratha",
+                "category": "Breads",
+                "description": "A flavorful, whole wheat bread filled with layers of caramelized onions, bursting with delightful flavors.",
+                "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/10/10/9cef97f9-bdbd-470b-8a69-45ce0add0500_5764cf9c-c5aa-4e4e-922f-6c1d6a3eb0b9.JPG",
+                "inStock": 1,
+                "isVeg": 1,
+                "price": 4000,
+                "variants": {},
+                "variantsV2": {},
+                "itemAttribute": {
+                    "vegClassifier": "VEG"
+                },
+                "ribbon": {},
+                "type": "ITEM",
+                "itemBadge": {},
+                "badgesV2": {},
+                "ratings": {
+                    "aggregatedRating": {
+                        "rating": "3.2",
+                        "ratingCount": "3 ratings",
+                        "ratingCountV2": "3"
+                    },
+                    "ratingsPresentationConfig": {
+                        "bgGradient": {
+                            "colours": [
+                                "#D9EFEC",
+                                "#00FFFFFF"
+                            ],
+                            "gradientDirection": "GRADIENT_DIRECTION_LEFT_TO_RIGHT"
+                        },
+                        "ratingIconColor": "rating_medium",
+                        "ratingTextColor": "rating_medium",
+                        "ratingCountTextColor": "rating_medium",
+                        "ratingFontName": "FONT_NAME_V2_OVERLINE_NEUTRAL_BOLD",
+                        "ratingCountFontName": "FONT_NAME_V2_OVERLINE_NEUTRAL_BOLD"
+                    }
+                },
+                "parentId": "61841869"
+            },
+            "analytics": {},
+            "hideRestaurantDetails": true
+        }
+    }
+]
