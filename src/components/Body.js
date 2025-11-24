@@ -4,33 +4,16 @@ import RestaurantCard from "./Restaurant";
 import RastaurantCard from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
+import useRestaurantHook from "../utils/useRestaurantHook";
 
 const Body = () => {
-  const { restaurants } =
-    RastaurantCard?.card?.card?.gridElements?.infoWithStyle;
 
-  const [topRatedRestaurat, setTopRatedRestaurent] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [myRestaurant , setMyRestaurant] = useState([])
 
-  useEffect(() => {
-    getDetails();
-  }, []);
-
-  const getDetails = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-
-    const json = await data.json();
+  const {myRestaurant , setTopRatedRestaurent , topRatedRestaurat} = useRestaurantHook()
 
 
-    const { restaurants } =
-      json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle;
 
-    setTopRatedRestaurent(restaurants);
-    setMyRestaurant(restaurants)
-  };
 
   const handleFilter = () => {
     const topFilter = topRatedRestaurat.filter((item) => {
