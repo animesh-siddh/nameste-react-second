@@ -11,12 +11,12 @@ const Header = () => {
   console.log("onlineStatus",onlineStatus)
 
   return (
-    <div className="headerContainer">
-      <div className="logo">
+    <div className="flex justify-between items-center bg-pink-200">
+      <div className="w-48">
         <img className="imgLogo" src={LOGO_URL} alt="restaurant" />
       </div>
-      <div className="navContainer">
-        <ul className="listContainer">
+      <div className="m-2">
+        <ul className="px-2.5 m-0.5 flex gap-5.5 text-3xl font-medium">
           <Link
             to={{
               pathname: "/",

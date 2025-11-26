@@ -37,11 +37,12 @@ const Body = () => {
   };
 
   return (
-    <>
+    <div className="m-3 p-1.5">
       <button onClick={handleFilter}>Top Retad Restaurent</button>
 
-      <div>
+      <div className="m-2 p-0.5 border-black ">
         <input
+        className="border p-0.5 rounded-lg"
           type="text"
           placeholder="search"
           value={searchText}
@@ -49,7 +50,7 @@ const Body = () => {
             setSearchText(e.target.value);
           }}
         />{" "}
-        <button onClick={() => handleSearchFilter()}>search</button>
+        <button className="bg-green-200 p-3 rounded-lg ml-0.5" onClick={() => handleSearchFilter()}>search</button>
       </div>
 
       <div className="res-container">
@@ -70,6 +71,8 @@ const Body = () => {
       />,
     ]} */}
 
+ <div className="mt-3.5 flex flex-wrap">
+
         {topRatedRestaurat?.map((resData) => {
           const {
             name,
@@ -82,6 +85,7 @@ const Body = () => {
           } = resData?.info;
 
           return (
+            <div className="w-[250px] h-[410px] bg-gray-300 m-2.5 items-center rounded-2xl">
         <Link  key={id} to={{pathname:`${"restaurantMenu/"+id}`}}>    <RestaurantCard
              
               name={name}
@@ -92,10 +96,12 @@ const Body = () => {
               locality={locality}
             />
             </Link>
+            </div>
           );
         })}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
