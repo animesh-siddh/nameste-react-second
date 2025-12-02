@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useSelector } from "react-redux";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -7,11 +8,12 @@ import UserContext from "../utils/createContext";
 const Header = () => {
   const [reactVariable, setReactVariable] = useState("Login");
   const data = useContext(UserContext);
+  const resItem = useSelector((state)=>state.cartMyItem.items)
 
 
   const onlineStatus = useOnlineStatus(); 
 
-  console.log("onlineStatus",onlineStatus)
+  console.log("onlineStatus",onlineStatus,resItem)
 
   return (
     <div className="flex justify-between items-center bg-pink-200">
@@ -59,6 +61,7 @@ const Header = () => {
           >
             {reactVariable}
           </Link>
+          <h3>{resItem.length}</h3>
           <h4>{data.loggedInUserName}</h4>
         </ul>
       </div>
