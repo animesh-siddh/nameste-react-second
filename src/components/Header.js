@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/createContext";
 
 const Header = () => {
   const [reactVariable, setReactVariable] = useState("Login");
+  const data = useContext(UserContext);
 
-  const onlineStatus = useOnlineStatus();
+
+  const onlineStatus = useOnlineStatus(); 
 
   console.log("onlineStatus",onlineStatus)
 
@@ -56,6 +59,7 @@ const Header = () => {
           >
             {reactVariable}
           </Link>
+          <h4>{data.loggedInUserName}</h4>
         </ul>
       </div>
     </div>

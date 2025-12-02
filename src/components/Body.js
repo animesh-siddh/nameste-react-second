@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { RastaurantCard } from "../utils/constants";
-import RestaurantCard from "./Restaurant";
+import RestaurantCard, { RestaurantCardPromoted } from "./Restaurant";
 import RastaurantCard from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useRestaurantHook from "../utils/useRestaurantHook";
+import UserContext from "../utils/createContext";
 
 const Body = () => {
-
   const [searchText, setSearchText] = useState("");
 
-  const {myRestaurant , setTopRatedRestaurent , topRatedRestaurat} = useRestaurantHook()
+  const {setUserInfo} = useContext(UserContext)
 
+  const { myRestaurant, setTopRatedRestaurent, topRatedRestaurat } =
+    useRestaurantHook();
 
+  const RestroCardHigerOderComponent = RestaurantCardPromoted();
 
+  console.log("RestaurantCardPromoted", RestaurantCardPromoted());
 
   const handleFilter = () => {
     const topFilter = topRatedRestaurat.filter((item) => {
@@ -29,7 +33,6 @@ const Body = () => {
 
   const handleSearchFilter = () => {
     const data = myRestaurant.filter((item) => {
-
       return item.info.name.toLowerCase().includes(searchText.toLowerCase());
     });
 
@@ -42,15 +45,21 @@ const Body = () => {
 
       <div className="m-2 p-0.5 border-black ">
         <input
-        className="border p-0.5 rounded-lg"
+          className="border p-0.5 rounded-lg"
           type="text"
           placeholder="search"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
+            setUserInfo(e.target.value)
           }}
         />{" "}
-        <button className="bg-green-200 p-3 rounded-lg ml-0.5" onClick={() => handleSearchFilter()}>search</button>
+        <button
+          className="bg-green-200 p-3 rounded-lg ml-0.5"
+          onClick={() => handleSearchFilter()}
+        >
+          search
+        </button>
       </div>
 
       <div className="res-container">
@@ -71,34 +80,47 @@ const Body = () => {
       />,
     ]} */}
 
- <div className="mt-3.5 flex flex-wrap">
+        <div className="mt-3.5 flex flex-wrap">
+          {topRatedRestaurat?.map((resData) => {
+            console.log("resData",resData)
+            const {
+              name,
+              avgRating,
+              locality,
+              areaName,
+              cloudinaryImageId,
+              cuisines,
+              id,
+              isOpen,
+            } = resData?.info;
 
-        {topRatedRestaurat?.map((resData) => {
-          const {
-            name,
-            avgRating,
-            locality,
-            areaName,
-            cloudinaryImageId,
-            cuisines,
-            id,
-          } = resData?.info;
-
-          return (
-            <div className="w-[250px] h-[410px] bg-gray-300 m-2.5 items-center rounded-2xl">
-        <Link  key={id} to={{pathname:`${"restaurantMenu/"+id}`}}>    <RestaurantCard
-             
-              name={name}
-              avgRating={avgRating}
-              cuisines={cuisines}
-              areaName={areaName}
-              cloudinaryImageId={cloudinaryImageId}
-              locality={locality}
-            />
-            </Link>
-            </div>
-          );
-        })}
+            return (
+              <div key={id} className="w-[250px] h-[410px] bg-gray-300 m-2.5 items-center rounded-2xl">
+                <Link  to={{ pathname: `${"restaurantMenu/" + id}` }}>
+                  {" "}
+                  {isOpen ? (
+                    <RestroCardHigerOderComponent
+                      name={name}
+                      avgRating={avgRating}
+                      cuisines={cuisines}
+                      areaName={areaName}
+                      cloudinaryImageId={cloudinaryImageId}
+                      locality={locality}
+                    />
+                  ) : (
+                    <RestaurantCard
+                      name={name}
+                      avgRating={avgRating}
+                      cuisines={cuisines}
+                      areaName={areaName}
+                      cloudinaryImageId={cloudinaryImageId}
+                      locality={locality}
+                    />
+                  )}
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
